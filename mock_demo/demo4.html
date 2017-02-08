@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>MockJS-demo</title>
+<script type="text/javascript" src="jquery-2.0.3.min.js"></script>
+<!-- <script src="http://mockjs.com/dist/mock.js"></script>
+ -->
+ <script src="mock.js"></script>
+ </head>
+<body>
+<script>
+     //demo2
+      Mock.mock(/\.json/, 'post', {
+         type: 'post'
+     })
+     $.ajax({
+          url: 'hello.json',
+          dataType:'json'
+     }).done(function(data, status, xhr){
+          console.log(data);
+          document.writeln(JSON.stringify(data, null, 4));
+     });
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>MockJS-demo</title>
+<script type="text/javascript" src="jquery-2.0.3.min.js"></script>
+<!-- <script src="http://mockjs.com/dist/mock.js"></script>
+ -->
+ <!-- 本地加载mock.js文件 -->
+ <script src="mock.js"></script>
+ </head>
+<body>
+<script>
+     //demo3
+     Mock.mock('http://a',{
+    'number1|1-100.1-10': 1,
+    'number2|123.1-10': 1,
+    'number3|123.3': 1,
+    'number4|123.10': 1.123
+})
+     $.ajax({
+          url: 'http://a',//url:自己定义，与上面的一致即可
+          dataType:'json'
+     }).done(function(data, status, xhr){
+          document.writeln(JSON.stringify(data, null, 4));
+     });
+</script>
+</body>
+</html>
